@@ -1,5 +1,7 @@
+
 variable "prefix" {
-  default = "example"
+type    = string
+default = "swjeong"
 }
 
 locals {
@@ -8,7 +10,7 @@ locals {
 
 resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-resources"
-  location = "West Europe"
+  location = "koreacentral"
 }
 
 resource "azurerm_virtual_network" "main" {
@@ -60,8 +62,8 @@ resource "azurerm_virtual_machine" "example" {
 
   os_profile {
     computer_name  = local.vm_name
-    admin_username = "testadmin"
-    admin_password = "Password1234!"
+    admin_username = "wjadmin"
+    admin_password = "qwer1234!!!!"
   }
 
   os_profile_linux_config {
@@ -84,3 +86,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "example" {
   lun                = "10"
   caching            = "ReadWrite"
 }
+
+
+
+
